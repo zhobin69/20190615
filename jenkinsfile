@@ -1,7 +1,5 @@
 pipeline {
-	agent {
-		docker { image 'python:3.5.1'}
-	}
+	agent any
 	stages {
 		stage('Build') {
 			steps {
@@ -10,6 +8,8 @@ pipeline {
 				sh 'echo $PATH'
 				sh 'echo "**********"'
 				sh 'python --version'
+				sh 'echo "**********"'
+				sh 'echo $USER'
 			}
 		}
 	}
