@@ -1,0 +1,24 @@
+pipeline {
+	agent ant
+	environment {
+		name = "Alireza"
+		family = "Khalesi"
+		job = "Admin"
+	}
+	stages {
+		stage('Build') {
+			environment {
+				age = 28
+				eye = "black"
+			}
+			steps {
+				sh 'printenv'
+			}
+		}
+		stage('Test') {
+			steps {
+				sh 'printenv'
+			}
+		}
+	}
+}
