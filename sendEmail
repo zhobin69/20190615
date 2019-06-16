@@ -1,0 +1,22 @@
+pipeline {
+	agent any
+	stages {
+		stage('Build') {
+			steps {
+				sh 'pwd'
+				sh 'echo "*********"'
+			}
+		}
+	}
+	post {
+		always {
+			echo "pipeline finished"
+			deleteDir()
+		}
+		success {
+			echo "Successfully finished"
+			echo "+++++++++++++++++++++"
+			mail to: 'alireza.khalesi@peykasa.ir', subject: "success pipeline: ${currentBuild.fullDisplayName}", body: "All thing is successfully with ${env.BUILD_URL}"
+		}
+	}
+}
