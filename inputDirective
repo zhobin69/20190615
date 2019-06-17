@@ -1,0 +1,17 @@
+pipeline {
+	agent any
+	stages {
+		stage('Example') {
+			input {
+				message "Should we continue?"
+				ok "Yes, We should"
+				parameters {
+					string( name: "PERSON", defaultValue: "Mr, Jenkins", description: "Who should ...")
+				}
+			}
+			steps {
+				echo "Hello, ${params.PERSON}, nice to meet you."
+			}	
+		}		
+	}
+}
