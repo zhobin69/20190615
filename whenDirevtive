@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment {
-		name = "zhobin"
+		name = "zhobin69"
 	}
 	stages {
 		stage('Build') {
