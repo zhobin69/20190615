@@ -1,0 +1,18 @@
+pipeline {
+	agent any
+	stages {
+		stage('Build'){
+			steps {
+				echo "Hello, Im in stage 'Build'"
+			}
+		}
+		stage('Deploy'){
+			whene {
+				branch 'production'
+			}
+			steps {
+				echo "Im in Deploy stage"
+			}
+		}
+	}
+}
